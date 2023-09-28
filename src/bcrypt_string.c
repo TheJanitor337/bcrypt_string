@@ -72,9 +72,14 @@ void verify_and_prompt()
 {
     char cipherText[MAX_STRING_LENGTH];
     char userSalt[MAX_SALT_LENGTH];
+    char plainText[MAX_SALT_LENGTH];
 
-    // Use getpass to securely input the password
-    char *plainText = getpass("Enter the string to validate: ");
+    printf("Enter the string to validate: ");
+    if (!read_input(plainText, sizeof(plainText)))
+    {
+        printf("Error reading input.\n");
+        return;
+    }
 
     printf("Enter the hash: ");
     if (!read_input(cipherText, sizeof(cipherText)))
