@@ -4,7 +4,15 @@
 #include <time.h>
 #include "../include/bcrypt_utils.h"
 
-// Function to generate a random salt
+/**
+ * @brief Generates a random salt.
+ *
+ * This function generates a random salt using the specified character set and
+ * null-terminates it.
+ *
+ * @param salt The buffer to store the generated salt.
+ * @param salt_size The size of the salt buffer.
+ */
 void generate_salt(char salt[], size_t salt_size)
 {
   const char charset[] = "./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -19,7 +27,17 @@ void generate_salt(char salt[], size_t salt_size)
   salt[salt_size - 1] = '\0'; // Null-terminate the salt
 }
 
-// Function to encrypt a string (bcrypt encryption goes here)
+/**
+ * @brief Encrypts a string using bcrypt encryption.
+ *
+ * This function encrypts a plaintext string using bcrypt encryption and stores
+ * the result in the provided buffer.
+ *
+ * @param plainText The plaintext string to encrypt.
+ * @param salt The salt to use for encryption.
+ * @param hashed The buffer to store the encrypted string.
+ * @return true if encryption is successful, false otherwise.
+ */
 bool encrypt_string(const char *plainText, const char *salt, char hashed[])
 {
   // Hash the plaintext password using bcrypt
@@ -37,7 +55,17 @@ bool encrypt_string(const char *plainText, const char *salt, char hashed[])
   }
 }
 
-// Function to verify a plaintext string against a bcrypt hash
+/**
+ * @brief Verifies a plaintext string against a bcrypt hash.
+ *
+ * This function verifies whether a plaintext string matches a bcrypt hash
+ * when using a provided salt.
+ *
+ * @param plainText The plaintext string to verify.
+ * @param bcrypt_hash The bcrypt hash to compare with.
+ * @param salt The salt used for encryption.
+ * @return true if the plaintext matches the hash, false otherwise.
+ */
 bool verify_hash(const char *plainText, const char *bcrypt_hash, const char *salt)
 {
   char expected_hash[MAX_STRING_LENGTH];

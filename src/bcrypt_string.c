@@ -8,7 +8,15 @@
 #define MENU_CHOICE_VERIFY 2
 #define MENU_CHOICE_EXIT 3
 
-// Function to read a line of input with validation
+/**
+ * @brief Reads a line of input with validation.
+ *
+ * This function reads a line of input from the standard input (stdin) and validates it.
+ *
+ * @param buffer The buffer to store the input.
+ * @param buffer_size The size of the buffer.
+ * @return true if input is read and validated successfully, false otherwise.
+ */
 bool read_input(char *buffer, size_t buffer_size)
 {
     if (fgets(buffer, buffer_size, stdin) == NULL)
@@ -27,7 +35,9 @@ bool read_input(char *buffer, size_t buffer_size)
     return true;
 }
 
-// Function to handle encryption and user interaction
+/**
+ * @brief Handles encryption and user interaction.
+ */
 void encrypt_and_prompt()
 {
     char generatedSalt[MAX_SALT_LENGTH];
@@ -49,7 +59,9 @@ void encrypt_and_prompt()
     printf("Hashed: %s\n", hashed);
 }
 
-// Function to handle decryption and user interaction
+/**
+ * @brief Handles decryption and user interaction.
+ */
 void verify_and_prompt()
 {
     char cipherText[MAX_STRING_LENGTH];
