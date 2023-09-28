@@ -17,6 +17,7 @@ obj/
 
 # Ignore user-specific files
 *.log
+.DS_Store
 
 # Ignore generated documentation
 docs/
