@@ -1,7 +1,7 @@
 /**
- * @file bcrypt_utils.c
+ * @file crypt_utils.c
  *
- * @brief C file for bcrypt_utils functions.
+ * @brief C file for crypt_utils functions.
  */
 
 #include <stdio.h>
@@ -9,7 +9,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <time.h>
-#include "../include/bcrypt_utils.h"
+#include "../include/crypt_utils.h"
 
 /**
  * @brief Generates a random salt.
@@ -35,9 +35,9 @@ void generate_salt(char salt[], size_t salt_size)
 }
 
 /**
- * @brief Encrypts a string using bcrypt encryption.
+ * @brief Encrypts a string using crypt encryption.
  *
- * This function encrypts a plaintext string using bcrypt encryption and stores
+ * This function encrypts a plaintext string using crypt encryption and stores
  * the result in the provided buffer.
  *
  * @param plainText The plaintext string to encrypt.
@@ -47,7 +47,7 @@ void generate_salt(char salt[], size_t salt_size)
  */
 bool encrypt_string(const char *plainText, const char *salt, char hashed[])
 {
-  // Hash the plaintext password using bcrypt
+  // Hash the plaintext password using DES
   char *result = crypt(plainText, salt);
 
   if (result != NULL)
@@ -63,24 +63,24 @@ bool encrypt_string(const char *plainText, const char *salt, char hashed[])
 }
 
 /**
- * @brief Verifies a plaintext string against a bcrypt hash.
+ * @brief Verifies a plaintext string against a DES hash.
  *
- * This function verifies whether a plaintext string matches a bcrypt hash
+ * This function verifies whether a plaintext string matches a DES hash
  * when using a provided salt.
  *
  * @param plainText The plaintext string to verify.
- * @param bcrypt_hash The bcrypt hash to compare with.
+ * @param crypt_hash The DES hash to compare with.
  * @param salt The salt used for encryption.
  * @return true if the plaintext matches the hash, false otherwise.
  */
-bool verify_hash(const char *plainText, const char *bcrypt_hash, const char *salt)
+bool verify_hash(const char *plainText, const char *crypt_hash, const char *salt)
 {
   char expected_hash[MAX_STRING_LENGTH];
 
   if (encrypt_string(plainText, salt, expected_hash))
   {
-    // Compare the expected hash with the provided bcrypt hash
-    return (strcmp(expected_hash, bcrypt_hash) == 0);
+    // Compare the expected hash with the provided crypt hash
+    return (strcmp(expected_hash, crypt_hash) == 0);
   }
   else
   {

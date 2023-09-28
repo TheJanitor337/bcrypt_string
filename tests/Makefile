@@ -3,15 +3,15 @@ CC := gcc
 CFLAGS := -std=c11 -Wall -Wextra -I../include
 
 # Source files
-TEST_SOURCES := test_bcrypt_utils.c
-APP_SOURCES := ../src/bcrypt_utils.c  # Include application source files here
+TEST_SOURCES := test_crypt_utils.c
+APP_SOURCES := ../src/crypt_utils.c  # Include application source files here
 
 # Object files
 TEST_OBJECTS := $(TEST_SOURCES:.c=.o)
 APP_OBJECTS := $(APP_SOURCES:.c=.o)
 
 # Executable name
-TEST_EXECUTABLE := test_bcrypt_utils
+TEST_EXECUTABLE := test_crypt_utils
 
 # Libraries
 LIBS := -lcmocka

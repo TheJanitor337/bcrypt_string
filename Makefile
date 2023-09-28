@@ -16,7 +16,7 @@ SOURCES = $(wildcard $(SRCDIR)/*.c)
 OBJECTS = $(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SOURCES))
 
 # Executable
-TARGET = $(BINDIR)/bcrypt_string
+TARGET = $(BINDIR)/crypt_string
 
 # Default target
 all: $(TARGET)
