@@ -1,14 +1,14 @@
 /**
- * @file bcrypt_string.c
+ * @file crypt_string.c
  *
- * @brief C file for bcrypt_string functions.
+ * @brief C file for crypt_string functions.
  */
 
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
 #include <unistd.h>
-#include "../include/bcrypt_utils.h"
+#include "../include/crypt_utils.h"
 
 #define MENU_CHOICE_ENCRYPT 1
 #define MENU_CHOICE_VERIFY 2
