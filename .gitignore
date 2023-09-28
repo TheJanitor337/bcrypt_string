@@ -27,3 +27,10 @@ vendor/
 
 # Ignore test binary
 tests/test_bcrypt_utils
+
+# Ignore Doxygen-generated files and directories
+/doc/
+/html/
+/latex/
+/man/
+/xml/
