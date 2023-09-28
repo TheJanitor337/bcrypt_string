@@ -1,3 +1,9 @@
+/**
+ * @file bcrypt_utils.c
+ *
+ * @brief C file for bcrypt_utils functions.
+ */
+
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>

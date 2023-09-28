@@ -1,3 +1,9 @@
+/**
+ * @file bcrypt_string.c
+ *
+ * @brief C file for bcrypt_string functions.
+ */
+
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
