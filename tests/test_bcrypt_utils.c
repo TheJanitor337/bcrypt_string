@@ -1,9 +1,9 @@
-#include "../include/bcrypt_utils.h"
 #include <stdarg.h>
 #include <stddef.h>
 #include <setjmp.h>
 #include <string.h>
 #include <cmocka.h>
+#include "../include/bcrypt_utils.h"
 
 // Define setup and teardown functions if needed
 

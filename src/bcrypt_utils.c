@@ -44,8 +44,6 @@ bool verify_hash(const char *plainText, const char *bcrypt_hash, const char *sal
 
   if (encrypt_string(plainText, salt, expected_hash))
   {
-    printf("bcrypt_hash: %s\n", bcrypt_hash);
-    printf("expected_hash: %s\n", expected_hash);
     // Compare the expected hash with the provided bcrypt hash
     return (strcmp(expected_hash, bcrypt_hash) == 0);
   }

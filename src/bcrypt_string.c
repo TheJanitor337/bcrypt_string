@@ -4,8 +4,6 @@
 #include <unistd.h>
 #include "../include/bcrypt_utils.h"
 
-#define MAX_STRING_LENGTH 100
-#define MAX_SALT_LENGTH 64
 #define MENU_CHOICE_ENCRYPT 1
 #define MENU_CHOICE_VERIFY 2
 #define MENU_CHOICE_EXIT 3
